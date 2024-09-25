@@ -1,9 +1,11 @@
 
-export function NewToDoForm(props){
-// eslint-disable-next-line react/prop-types
-const {handleSubmit = Function.prototype , item, setItem} = props
 
-    return <form onSubmit={handleSubmit} className="new-item-form">
+
+function NewToDoForm({handleSubmit = Function.prototype , item, setItem}){
+
+
+
+    return <form onSubmit={(e) => {handleSubmit(e)}} className="new-item-form">
     <div className="form-row">
       <label htmlFor="item"></label>
         <input 
@@ -18,3 +20,4 @@ const {handleSubmit = Function.prototype , item, setItem} = props
   </form>
 
 }
+export {NewToDoForm}

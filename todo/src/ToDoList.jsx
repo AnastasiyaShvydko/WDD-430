@@ -6,6 +6,7 @@ export function ToDoList({todos , handleDelete, toggleTodo}){
     return <ul className="list">
         {todos.length === 0 && "No ToDos"}
         {todos.map((todo) => {
+          console.log(todo.completed)
   return <ToDoItem {...todo} key={todo.id} handleDelete = {handleDelete} toggleTodo = {toggleTodo} /> })}
 
 

@@ -9,11 +9,9 @@ import { ToDoList } from "./ToDoList";
 export default function App() {
 
   const [item, setItem] = useState('');
-  const [todos, setTodos] =useState(()=>{
-    const localValue = localStorage.getItem("TODOS")
-    if (localValue == null) return []
-
-    return JSON.parse(localValue)
+  const [todos, setTodos] = useState(()=>{
+    const localValue = localStorage.getItem("TODOS");
+    return localValue ? JSON.parse(localValue) : false;
   });
 
 
@@ -21,12 +19,16 @@ export default function App() {
 
   function handleSubmit(e){
     e.preventDefault()
+    if(!item==''){
     setTodos((currentTodos) =>{
       return [
        ...currentTodos,
       {id: crypto.randomUUID(),title:item,completed:false}]
     })
-    setItem('')
+    setItem('')}
+   else{ alert( "Enter todo")}
+    //{todos.length === 0 && "No ToDos"}
+    
 
   }
 
@@ -45,16 +47,15 @@ export default function App() {
     setTodos(currentTodos => {
         return currentTodos.map(todo =>{
           if(todo.id === id){
-            return{
-              ...todo, completed
-            }
-            
+            return {...todo, completed}
           }
           return todo
         }
 
         )
     })
+
+
 
   }
 
