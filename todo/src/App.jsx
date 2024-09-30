@@ -11,7 +11,7 @@ export default function App() {
   const [item, setItem] = useState('');
   const [todos, setTodos] = useState(()=>{
     const localValue = localStorage.getItem("TODOS");
-    return localValue ? JSON.parse(localValue) : false;
+    return localValue ? JSON.parse(localValue) : [];
   });
 
 
