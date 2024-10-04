@@ -1,5 +1,8 @@
+//layout which will be applied to all of the pages like basic
+
 import '@/app/ui/global.css';
-import { inter } from '@/app/ui/fonts';
+
+import { roboto } from '@/pages/fonts/fonts';
 import { Metadata } from 'next';
  
 
@@ -19,8 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${roboto.className} antialiased`}>
+       
+     
+     {children}
+        
+        </body>
     </html>
+    
   );
 }
