@@ -7,15 +7,15 @@ import Link from 'next/link';
 
 const links = [
     { name: 'Home',
-      href: '/dashboard',
+      href: '/',
      },
     {
       name: 'Catalog',
-      href: '/dashboard/invoices',
+      href: '/catalog',
       
     },
-    { name: 'Salers', 
-      href: '/dashboard/customers', 
+    { name: 'Sellers', 
+      href: '/sellers', 
       },
   ];
 
